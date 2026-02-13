@@ -29,6 +29,9 @@ media/
 # Vendored / external repos
 imsg/
 
+# Legacy / local scratch (main code lives in fashion-mcp/)
+services/
+
 # Terraform state (never commit)
 **/.terraform/
 **/terraform.tfstate
@@ -37,3 +40,13 @@ imsg/
 **/*.tfstate.*
 crash.log
 crash.*.log
+
+# Python
+.venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
