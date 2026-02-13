@@ -38,6 +38,10 @@ This repo is a monorepo; the main product lives in `fashion-mcp/`.
 - Stripe checkout session creation when `CHECKOUT_PROVIDER=stripe`.
 - Always returns an approval link (`/approve/:token`) for explicit consent.
 
+**Auth**
+- `AUTH_MODE=dev` for local/dev testing and scripted e2e runs.
+- `AUTH_MODE=oauth` for production (JWT validation via JWKS; works with Auth0/Okta/Cognito). See `fashion-mcp/README.md`.
+
 **Omnichannel**
 - iMessage bridge app (runs on macOS) that relays inbound/outbound messages + attachments.
 - WhatsApp/Telegram sender + webhook support is implemented but disabled by default in AWS deploy.
@@ -135,4 +139,3 @@ AWS deployment has been exercised with:
 - `/healthz` passing (DB up, strict full-body validator up, try-on provider `google_vertex`, checkout provider `stripe`)
 - End-to-end try-on producing an S3 presigned image URL (Google Vertex VTO)
 - Stripe budget enforcement producing blocked + allowed approval flows
-
