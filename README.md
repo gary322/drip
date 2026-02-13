@@ -1,17 +1,19 @@
 # Drip
 
+[![CI](https://github.com/gary322/drip/actions/workflows/ci.yml/badge.svg)](https://github.com/gary322/drip/actions/workflows/ci.yml)
+
 Production-grade, headless **fashion + styling + virtual try-on** system designed to be used via:
 - **ChatGPT** (Model Context Protocol / MCP tools + an in-chat “Style Map” widget)
 - **iMessage/SMS** (via a macOS bridge)
 - **WhatsApp** and **Telegram** (webhook + sender workers)
 
 Core principles:
-- **Server-side data**: user photos, profiles, budgets, and generated try-ons are stored on your infra (Postgres + S3).
+- **Server-side data**: user photos, profiles, budgets, and generated try-ons are stored on *your* infra (Postgres + object storage).
 - **Explicit consent**: purchase is always gated by an **approval link**.
 - **Real try-on only**: production is locked to **Google Vertex AI Virtual Try-On** (no “fake” local compositor fallback).
 - **Full-body enforcement**: the system rejects non head-to-toe images (and can require feet + front-facing).
 
-This repo is a monorepo; the main product lives in `fashion-mcp/`.
+The main product lives in `fashion-mcp/`.
 
 ## What’s Implemented
 
@@ -54,6 +56,13 @@ This repo is a monorepo; the main product lives in `fashion-mcp/`.
   - `fashion-mcp/apps/imsg-bridge/`: macOS iMessage/SMS bridge that talks to the backend over HTTPS
   - `fashion-mcp/infra/aws/`: Terraform + `deploy.sh` for AWS (ECS Fargate + ALB + RDS + S3)
 - `sop.txt`: end-to-end system blueprint and workflows
+
+## Documentation Index
+
+- Product overview + local dev: `fashion-mcp/README.md`
+- AWS deploy: `fashion-mcp/infra/aws/README.md`
+- Tool contracts: `fashion-mcp/docs/tool-contracts.md`
+- Production checklist: `fashion-mcp/docs/production-checklist.md`
 
 ## Local Development
 
@@ -111,7 +120,7 @@ Details: `fashion-mcp/infra/aws/README.md`
 
 ## ChatGPT Usage (MCP)
 
-The server validates `Origin` to prevent DNS rebinding. In production, allow:
+This server validates `Origin` to prevent DNS rebinding. In production, allow:
 - `https://chatgpt.com`
 - `https://www.chatgpt.com`
 

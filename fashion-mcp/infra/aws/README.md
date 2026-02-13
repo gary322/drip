@@ -40,6 +40,29 @@ What the script does:
 4. Runs DB migrations + seed via one-off ECS tasks
 5. Scales services up to `1`
 
+## Verify
+
+After deploy, the script prints the ALB base URL. You can verify:
+
+```bash
+curl -fsS http://<alb-dns>/healthz
+curl -fsS http://<alb-dns>/
+```
+
+Run end-to-end checks from `fashion-mcp/`:
+
+```bash
+cd ../../
+MCP_URL="http://<alb-dns>/mcp" MCP_ORIGIN="https://chatgpt.com" MCP_TOKEN="dev_e2e_user" \
+  node scripts/e2e_fullbody_enforcement.mjs
+
+MCP_URL="http://<alb-dns>/mcp" MCP_ORIGIN="https://chatgpt.com" MCP_TOKEN="dev_e2e_user" \
+  node scripts/e2e_internet_budget_tryon.mjs
+
+MCP_URL="http://<alb-dns>/mcp" MCP_ORIGIN="https://chatgpt.com" MCP_TOKEN="dev_e2e_user" \
+  node scripts/e2e_stripe_budget_checkout.mjs
+```
+
 ### Inputs / Overrides
 
 You can override defaults via env vars:

@@ -42,6 +42,12 @@ Checkout behavior:
 - Budget enforcement on checkout is controlled by `CHECKOUT_ENFORCE_BUDGET` and `allowOverBudget`.
 - Stripe webhook endpoint: `POST /webhooks/stripe` (raw body + signature verified).
 
+## Docs
+
+- Tool contracts: `docs/tool-contracts.md`
+- Production checklist: `docs/production-checklist.md`
+- AWS deploy: `infra/aws/README.md`
+
 ## Quickstart (local dev)
 
 ### 1) Start Postgres + Redis
@@ -70,6 +76,22 @@ Server:
 - OAuth protected resource metadata: `http://localhost:8787/.well-known/oauth-protected-resource`
 - Approval link UI (minimal web page): `http://localhost:8787/approve/<token>`
 - Postgres (docker compose): `localhost:62111`
+
+## Deploy to AWS
+
+This repo includes an AWS Terraform stack (ECS Fargate + ALB + RDS + S3) and a deploy script that:
+1. Applies Terraform (services scaled to 0)
+2. Builds + pushes images to ECR
+3. Writes secrets into AWS Secrets Manager
+4. Runs migrations + seeds via one-off ECS tasks
+5. Scales services up
+
+See `infra/aws/README.md` and run:
+
+```bash
+cd infra/aws
+./scripts/deploy.sh
+```
 
 ## Using with MCP Inspector
 Use the MCP Inspector and point it at `http://localhost:8787/mcp`.
@@ -159,6 +181,8 @@ docker run --rm -p 8090:8090 fullbody-validator:latest
 npm run test
 npm run test:integration
 node scripts/e2e_fullbody_enforcement.mjs
+node scripts/e2e_internet_budget_tryon.mjs
+node scripts/e2e_stripe_budget_checkout.mjs
 ```
 
 ## Container build
