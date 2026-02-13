@@ -1,0 +1,11 @@
+node_modules
+dist
+coverage
+.git
+.github
+apps/mcp-server/.env
+apps/mcp-server/.env.*
+*.log
+tmp
+specs
+

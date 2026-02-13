@@ -1,0 +1,40 @@
+{
+  "personBase": {
+    "file": "person_base_front.jpg",
+    "sourceUrl": "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=900"
+  },
+  "looks": [
+    {
+      "name": "cap_style",
+      "refUrl": "https://unsplash.com/photos/VioWXc7FKKA/download?force=true&w=900",
+      "productId": "look_cap_1",
+      "jobId": "de052e0c-91fc-4a80-a7b9-c3f05a79be58",
+      "outputFile": "output_cap.png",
+      "outputUrl": "http://localhost:8793/generated/de052e0c-91fc-4a80-a7b9-c3f05a79be58.png"
+    },
+    {
+      "name": "formal_tie_light",
+      "refUrl": "https://unsplash.com/photos/MEhhBJJAwao/download?force=true&w=900",
+      "productId": "look_tie_1",
+      "jobId": "dc0c7a6c-667a-4780-8d89-208756bb9082",
+      "outputFile": "output_tie_1.png",
+      "outputUrl": "http://localhost:8793/generated/dc0c7a6c-667a-4780-8d89-208756bb9082.png"
+    },
+    {
+      "name": "formal_tie_dark",
+      "refUrl": "https://unsplash.com/photos/tf3HQkhhJxo/download?force=true&w=900",
+      "productId": "look_tie_2",
+      "jobId": "e814f953-43ca-4798-9ccb-c93ae69bbd97",
+      "outputFile": "output_tie_2.png",
+      "outputUrl": "http://localhost:8793/generated/e814f953-43ca-4798-9ccb-c93ae69bbd97.png"
+    },
+    {
+      "name": "hoodie_style",
+      "refUrl": "https://unsplash.com/photos/tShzQmQe8RE/download?force=true&w=900",
+      "productId": "look_hoodie_1",
+      "jobId": "bb866789-c7d6-490d-9931-57581fa2ea28",
+      "outputFile": "output_hoodie.png",
+      "outputUrl": "http://localhost:8796/generated/bb866789-c7d6-490d-9931-57581fa2ea28.png"
+    }
+  ]
+}

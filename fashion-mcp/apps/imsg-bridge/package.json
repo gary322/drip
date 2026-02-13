@@ -1,0 +1,22 @@
+{
+  "name": "@fashion/imsg-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file=.env --watch --loader ts-node/esm src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "test": "node --env-file=.env.example --loader ts-node/esm --test src/**/*.test.ts"
+  },
+  "dependencies": {
+    "@fashion/shared": "0.1.0",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
+

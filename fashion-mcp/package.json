@@ -1,0 +1,17 @@
+{
+  "name": "fashion-mcp",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm --workspace packages/shared run build && npm --workspace apps/mcp-server run dev",
+    "build": "npm --workspace packages/shared run build && npm --workspace apps/mcp-server run build && npm --workspace apps/imsg-bridge run build",
+    "start": "npm --workspace apps/mcp-server run start",
+    "db:migrate": "npm --workspace apps/mcp-server run db:migrate",
+    "db:seed": "npm --workspace apps/mcp-server run db:seed",
+    "test": "npm --workspace packages/shared run build && npm --workspace apps/mcp-server run test && npm --workspace apps/imsg-bridge run test",
+    "test:integration": "npm --workspace packages/shared run build && npm --workspace apps/mcp-server run test:integration"
+  }
+}

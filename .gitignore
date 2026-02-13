@@ -1,0 +1,39 @@
+# macOS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Secrets / local-only inputs
+.secrets/
+google.txt
+stripe.txt
+google_service_account.json
+*.pem
+
+# Node
+node_modules/
+dist/
+coverage/
+*.log
+tmp/
+.env
+.env.*
+!.env.example
+
+# Runtime generated assets
+generated/
+media/
+**/generated/
+**/media/
+
+# Vendored / external repos
+imsg/
+
+# Terraform state (never commit)
+**/.terraform/
+**/terraform.tfstate
+**/terraform.tfstate.*
+**/*.tfstate
+**/*.tfstate.*
+crash.log
+crash.*.log
