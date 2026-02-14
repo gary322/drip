@@ -20,14 +20,18 @@ The main product lives in `fashion-mcp/`.
 - What’s Implemented
 - Architecture
 - Deployment Topology (AWS + GCP + macOS)
+- Public Surface Area
 - Data Model
 - Key Flows
 - Photo Requirements (Non-Negotiable)
 - Configuration Reference
 - Repo Layout
+- Documentation Index
 - Local Development
 - AWS Deployment
 - Omnichannel Setup (WhatsApp/Telegram/iMessage)
+- Operational Notes (Production)
+- Security & Privacy Notes
 - ChatGPT Usage (MCP)
 - iMessage Bridge (macOS)
 - Secrets / Safety
