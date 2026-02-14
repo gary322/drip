@@ -7,6 +7,8 @@
 .secrets/
 google.txt
 stripe.txt
+SOP.txt
+sop.txt
 google_service_account.json
 *.pem
 

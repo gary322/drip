@@ -560,7 +560,6 @@ If you have compliance requirements (SOC2, HIPAA-like internal policies, etc.), 
 - `fashion-mcp/services/fullbody-validator/` (strict full-body validator; FastAPI + MediaPipe)
 - `fashion-mcp/apps/imsg-bridge/` (macOS iMessage/SMS bridge that talks to the backend over HTTPS)
 - `fashion-mcp/infra/aws/` (Terraform + deploy script for AWS: ECS Fargate + ALB + RDS + S3)
-- `sop.txt`: end-to-end system blueprint and workflows
 
 ## Documentation Index
 

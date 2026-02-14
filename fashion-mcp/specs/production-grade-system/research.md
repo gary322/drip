@@ -51,7 +51,7 @@ Build a production-grade fashion MCP platform on AWS with Auth0 auth, deep-link 
 
 ## External research (optional)
 
-- `sop.txt` (repo root) — defines target architecture and production expectations for MCP, map UX, auth, and safety.
+- (removed from repo) `sop.txt` (repo root) — previously defined target architecture and production expectations for MCP, map UX, auth, and safety.
 
 ## Open questions
 
@@ -60,7 +60,7 @@ Build a production-grade fashion MCP platform on AWS with Auth0 auth, deep-link 
 
 ## Sources
 
-- `sop.txt`
+- (removed from repo) `sop.txt`
 - `apps/mcp-server/src/mcp/server.ts`
 - `apps/mcp-server/src/mcp/transport.ts`
 - `apps/mcp-server/src/auth/verifyAccessToken.ts`

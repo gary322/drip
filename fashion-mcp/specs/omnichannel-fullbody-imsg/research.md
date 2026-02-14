@@ -61,7 +61,7 @@ Omnichannel fashion assistant with enforced full-body photos and iMessage bridge
 
 ## Sources
 
-- `sop.txt`
+- (removed from repo) `sop.txt`
 - `imsg/docs/rpc.md`
 - `apps/mcp-server/src/*`
 - `services/fullbody-validator/*`
