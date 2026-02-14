@@ -25,6 +25,8 @@ generated/
 media/
 **/generated/
 **/media/
+!**/src/media/
+!**/src/media/**
 
 # Vendored / external repos
 imsg/
