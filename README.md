@@ -78,10 +78,10 @@ The main product lives in `fashion-mcp/`.
 ```mermaid
 flowchart LR
   U[User] <--> CG[ChatGPT]
-  CG <--> |MCP tools (Streamable HTTP)| ALB[Public HTTP(S) endpoint]
+  CG <--> |MCP tools: Streamable HTTP| ALB[Public HTTP/HTTPS endpoint]
   CG <--> |ui:// widget + tool calls| W[Style Map Widget]
 
-  ALB --> API[ECS: mcp-server (api)]
+  ALB --> API[ECS: mcp-server api]
   API --> DB[(Postgres)]
   API --> S3[(Object Storage: media + generated)]
   API --> SM[Secrets Manager]
@@ -92,7 +92,7 @@ flowchart LR
   ALB --> OUT[Approval UI: /approve/:token]
 
   subgraph Worker
-    WK[ECS: mcp-server (worker)]
+    WK[ECS: mcp-server worker]
     WK --> DB
     WK --> S3
     WK --> SM
@@ -124,22 +124,22 @@ flowchart TB
     IMU[iMessage/SMS users]
   end
 
-  subgraph AWS["AWS (recommended)"]
+  subgraph AWS["AWS recommended"]
     ALB[Public ALB]
-    API[ECS Service: mcp-server (public)]
-    WKR[ECS Service: worker(s) (private)]
+    API[ECS Service: mcp-server public]
+    WKR[ECS Service: worker tasks private]
     RDS[(RDS Postgres)]
     S3[(S3 media + generated)]
     SM[AWS Secrets Manager]
     FBV[fullbody-validator sidecar]
   end
 
-  subgraph macOS["macOS (required for iMessage)"]
+  subgraph macOS["macOS required for iMessage"]
     IMB[iMessage bridge]
     MSG[Messages.app]
   end
 
-  subgraph GCP["GCP (required for Vertex try-on)"]
+  subgraph GCP["GCP required for Vertex try-on"]
     VTO[Vertex AI Virtual Try-On]
   end
 
@@ -533,7 +533,7 @@ flowchart LR
   API -->|optional| Stripe[Stripe Checkout + Webhooks]
   API -->|optional| WA[WhatsApp Graph API]
   API -->|optional| TG[Telegram Bot API]
-  IMB[iMessage bridge (macOS)] -->|optional HTTPS relay| API
+  IMB[iMessage bridge on macOS] -->|optional HTTPS relay| API
 ```
 
 ### Encryption / Retention (AWS Stack Defaults)
